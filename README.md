@@ -102,8 +102,6 @@ export default class ComponentName extends React.Component<PropsType, StateType>
 
 
 [npm-image]: https://badge.fury.io/js/generator-ehi.svg
-[npm-url]: https://npmjs.org/package/generator-ehi
+[npm-url]: https://npmjs.org/package/generator-ehi-compgen
 [travis-image]: https://travis-ci.org/EventHi/generator-ehi.svg?branch=master
-[travis-url]: https://travis-ci.org/EventHi/generator-ehi
-[daviddm-image]: https://david-dm.org/EventHi/generator-ehi.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/EventHi/generator-ehi
+[travis-url]: https://travis-ci.org/EventHi/generator-ehi-compgen

@@ -5,6 +5,7 @@
 //
 
 import React from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import theme from './<%= componentName %>.css';
 
 
@@ -17,7 +18,7 @@ type Statetype = {
 }
 
 
-export default class <%= componentName %> extends React.Component<PropsType, StateType> {
+class <%= componentName %> extends React.Component<PropsType, StateType> {
   props: Propstype
   state: Statetype
 
@@ -27,3 +28,5 @@ export default class <%= componentName %> extends React.Component<PropsType, Sta
     );
   }
 }
+
+export defualt withStyles(theme)(<%= componentName %>);
