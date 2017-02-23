@@ -1,0 +1,29 @@
+//              ___             _   _  _ _
+//             | __|_ _____ _ _| |_| || (_)
+// Property of:| _|\ V / -_) ' \  _| __ | |
+//             |___|\_/\___|_||_\__|_||_|_|
+//
+
+import React from 'react';
+import theme from './<%= componentName %>.css';
+
+
+type Propstype = {
+
+}
+
+type Statetype = {
+
+}
+
+
+export default class <%= componentName %> extends React.Component<PropsType, StateType> {
+  props: Propstype
+  state: Statetype
+
+  render() {
+    return (
+      <span>{'<%= componentName %>'}</span>
+    );
+  }
+}
