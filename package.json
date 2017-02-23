@@ -1,6 +1,6 @@
 {
   "name": "generator-ehi-compgen",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Used internally by the EventHi team to generate new components boilerplate.",
   "homepage": "",
   "author": {
@@ -37,7 +37,7 @@
       "mocha": true
     }
   },
-  "repository": "EventHi/generator-ehi",
+  "repository": "EventHi/generator-ehi-compgen",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
