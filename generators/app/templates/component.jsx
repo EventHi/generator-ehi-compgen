@@ -11,7 +11,9 @@ import theme from './<%= componentName %>.css';
 type PropsType = {};
 
 const <%= componentName %> = (props: PropsType) => (
-  <span>{'<%= componentName %>'}</span>
+  <div>
+    <span>{'<%= componentName %>'}</span>
+  </div>
 );
 
 export default withStyles(theme)(<%= componentName %>);

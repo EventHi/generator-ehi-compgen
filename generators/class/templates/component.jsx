@@ -17,7 +17,11 @@ class <%= componentName %> extends React.Component<PropsType, StateType> {
   state: Statetype;
 
   render() {
-    return <span>{'jdieojdiweodjeiwojwiowf'}</span>;
+    return (
+      <div>
+        <span>{'jdieojdiweodjeiwojwiowf'}</span>
+      </div>
+    );
   }
 }
 
