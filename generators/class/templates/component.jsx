@@ -13,8 +13,8 @@ type Propstype = {};
 type Statetype = {};
 
 class <%= componentName %> extends React.Component<PropsType, StateType> {
-  props: Propstype
-  state: Statetype
+  props: Propstype;
+  state: Statetype;
 
   render() {
     return (
