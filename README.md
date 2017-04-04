@@ -36,17 +36,17 @@ yo ehi-compgen # functional component
 //
 
 import React from 'react';
-import theme from './ComponentName.css';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import theme from './<%= componentName %>.css';
 
-type PropsType = {
-
-}
+type PropsType = {}
 
 const ComponentName = (props: PropsType) => (
   <span>{'ComponentName'}</span>
 );
 
-export default ComponentName;
+export default withStyles(theme)(ComponentName);
+
 
 ```
 ## ES6 Class Component Example
@@ -65,28 +65,24 @@ yo ehi-compgen:class #es6 class component
 //
 
 import React from 'react';
-import theme from './ComponentName.css';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import theme from './neuwnweinde.css';
 
+type Propstype = {};
 
-type Propstype = {
+type Statetype = {};
 
-}
-
-type Statetype = {
-
-}
-
-
-export default class ComponentName extends React.Component<PropsType, StateType> {
-  props: Propstype
-  state: Statetype
+class <%= componentName %> extends React.Component<PropsType, StateType> {
+  props: Propstype;
+  state: Statetype;
 
   render() {
-    return (
-      <span>{'ComponentName'}</span>
-    );
+    return <span>{'jdieojdiweodjeiwojwiowf'}</span>;
   }
 }
+
+export default withStyles(theme)(<%= componentName %>);
+
 ```
 
 ## Getting To Know Yeoman

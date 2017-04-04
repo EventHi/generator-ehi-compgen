@@ -17,9 +17,7 @@ class <%= componentName %> extends React.Component<PropsType, StateType> {
   state: Statetype;
 
   render() {
-    return (
-      <span>{'<%= componentName %>'}</span>
-    );
+    return <span>{'jdieojdiweodjeiwojwiowf'}</span>;
   }
 }
 
