@@ -6,12 +6,11 @@
 
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from './<%= componentName %>.css';
+import theme from './neuwnweinde.css';
 
-type Propstype = {}
+type Propstype = {};
 
-type Statetype = {}
-
+type Statetype = {};
 
 class <%= componentName %> extends React.Component<PropsType, StateType> {
   props: Propstype
