@@ -3,6 +3,7 @@
 // Property of:| _|\ V / -_) ' \  _| __ | |
 //             |___|\_/\___|_||_\__|_||_|_|
 //
+// @flow
 
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';

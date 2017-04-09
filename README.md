@@ -35,6 +35,7 @@ yo ehi-compgen # functional component
 // Property of:| _|\ V / -_) ' \  _| __ | |
 //             |___|\_/\___|_||_\__|_||_|_|
 //
+// @flow
 
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
@@ -63,6 +64,7 @@ yo ehi-compgen:class # es6 class component
 // Property of:| _|\ V / -_) ' \  _| __ | |
 //             |___|\_/\___|_||_\__|_||_|_|
 //
+// @flow
 
 import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
@@ -101,6 +103,7 @@ yo ehi-compgen:class-gql # es6 class component w/ graphql
 // Property of:| _|\ V / -_) ' \  _| __ | |
 //             |___|\_/\___|_||_\__|_||_|_|
 //
+// @flow
 
 import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
@@ -127,11 +130,7 @@ const ComponentNameQuery = gql`
   query {}
 `;
 
-export default compose(
-  withStyles(theme),
-  graphql(ComponentNameQuery),
-)(ComponentName);
-
+export default compose(withStyles(theme), graphql(ComponentNameQuery))(ComponentName);
 
 ```
 

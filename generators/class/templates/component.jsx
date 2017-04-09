@@ -4,6 +4,7 @@
 //             |___|\_/\___|_||_\__|_||_|_|
 //
 // @flow
+
 import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import theme from './<%= componentName %>.css';
