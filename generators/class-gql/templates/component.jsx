@@ -6,6 +6,7 @@
 // @flow
 import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { graphql, gql, compose } from 'react-apollo';
 import theme from './<%= componentName %>.css';
 
 type PropsType = {};
@@ -28,4 +29,8 @@ class <%= componentName %> extends Component<DefaultPropsType, PropsType, StateT
   }
 }
 
-export default withStyles(theme)(<%= componentName %>);
+const <%= componentName %>Query = gql`
+  query {}
+`;
+
+export default compose(withStyles(theme), graphql(<%= componentName %>Query))(<%= componentName %>);

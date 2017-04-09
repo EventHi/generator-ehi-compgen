@@ -19,6 +19,7 @@ Then generate your new component:
 
 yo ehi-compgen  # stateless component
 yo ehi-compgen:class  # es6 class component
+yo ehi-compgen:class-gql # es6 class component w/ graphql
 ```
 ## Stateless Component Example
 ### Input
@@ -47,13 +48,12 @@ const ComponentName = (props: PropsType) => (
 
 export default withStyles(theme)(ComponentName);
 
-
 ```
 ## ES6 Class Component Example
 ### Input
 ```bash
 
-yo ehi-compgen:class #es6 class component
+yo ehi-compgen:class # es6 class component
 ```
 ### Output
 ```js
@@ -64,24 +64,74 @@ yo ehi-compgen:class #es6 class component
 //             |___|\_/\___|_||_\__|_||_|_|
 //
 
-import React from 'react';
+import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from './neuwnweinde.css';
+import theme from './ComponentName.css';
 
-type Propstype = {};
+type PropsType = {};
 
-type Statetype = {};
+type DefaultPropsType = {};
 
-class <%= componentName %> extends React.Component<PropsType, StateType> {
-  props: Propstype;
-  state: Statetype;
+type StateType = {};
+
+class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
+  static defaultProps: DefaultPropsType;
+  props: PropsType;
+  state: StateType;
 
   render() {
-    return <span>{'jdieojdiweodjeiwojwiowf'}</span>;
+    return <span>{'ComponentName'}</span>;
   }
 }
 
-export default withStyles(theme)(<%= componentName %>);
+export default withStyles(theme)(ComponentName);
+
+```
+## ES6 Class Component Example w/ Apollo-Client
+### Input
+```bash
+
+yo ehi-compgen:class-gql # es6 class component w/ graphql
+```
+### Output
+```js
+
+//              ___             _   _  _ _
+//             | __|_ _____ _ _| |_| || (_)
+// Property of:| _|\ V / -_) ' \  _| __ | |
+//             |___|\_/\___|_||_\__|_||_|_|
+//
+
+import React, { Component } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { graphql, compose } from 'react-apollo';
+import theme from './neuwnweinde.css';
+
+type PropsType = {};
+
+type DefaultPropsType = {};
+
+type StateType = {};
+
+class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
+  static defaultProps: DefaultPropsType;
+  props: PropsType;
+  state: StateType;
+
+  render() {
+    return <span>{'ComponentName'}</span>;
+  }
+}
+
+const ComponentNameQuery = gql`
+  query {}
+`;
+
+export default compose(
+  withStyles(theme),
+  graphql(ComponentNameQueryQuery),
+)(ComponentName);
+
 
 ```
 
