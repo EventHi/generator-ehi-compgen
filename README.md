@@ -129,7 +129,7 @@ const ComponentNameQuery = gql`
 
 export default compose(
   withStyles(theme),
-  graphql(ComponentNameQueryQuery),
+  graphql(ComponentNameQuery),
 )(ComponentName);
 
 
