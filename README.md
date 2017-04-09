@@ -1,4 +1,4 @@
-# generator-ehi-compgen [![NPM 0.6.2][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+# generator-ehi-compgen [![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen)
 
 This package is used internally at the EventHi team to generate boilerplate for new React components. This is available in both function and class forms.
 
