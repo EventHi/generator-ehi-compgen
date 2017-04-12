@@ -1,8 +1,9 @@
-# generator-ehi-compgen [![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen)
+# generator-ehi-compgen
+[![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen)  [![Greenkeeper badge](https://badges.greenkeeper.io/EventHi/generator-ehi-compgen.svg)](https://greenkeeper.io/)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/EventHi/generator-ehi-compgen.svg)](https://greenkeeper.io/)
+This package uses Flowtype, GraphQL, and isomorphic-style-loader.
 
-This package is used internally at the EventHi team to generate boilerplate for new React components. This is available in both function and class forms.
+This is used internally at the EventHi team to generate boilerplate for new React components. This is available in both function and class forms.
 
 
 ## Installation
@@ -46,7 +47,9 @@ import theme from './<%= componentName %>.css';
 type PropsType = {}
 
 const ComponentName = (props: PropsType) => (
-  <span>{'ComponentName'}</span>
+  <div>
+    <span>{'ComponentName'}</span>
+  </div>
 );
 
 export default withStyles(theme)(ComponentName);
@@ -84,7 +87,11 @@ class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
   state: StateType;
 
   render() {
-    return <span>{'ComponentName'}</span>;
+    return (
+      <div>
+        <span>{'ComponentName'}</span>;
+      </div>
+    );
   }
 }
 
@@ -124,7 +131,11 @@ class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
   state: StateType;
 
   render() {
-    return <span>{'ComponentName'}</span>;
+    return (
+      <div>
+        <span>{'ComponentName'}</span>;
+      </div>
+    );
   }
 }
 
@@ -144,8 +155,22 @@ export default compose(withStyles(theme), graphql(ComponentNameQuery))(Component
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
+MIT license
+Copyright ©EventHi Inc
 
- © [Kenneth Gabbara]()
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+The Software is provided "as is", without warranty of any kind, express or implied, including but not
+limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In
+no event shall the authors or copyright holders be liable for any claim, damages or other liability,
+whether in an action of contract, tort or otherwise, arising from, out of or in connection with the
+Software or the use or other dealings in the Software.
 
 
 [npm-image]: https://badge.fury.io/js/generator-ehi.svg
