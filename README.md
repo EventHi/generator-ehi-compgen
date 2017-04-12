@@ -1,5 +1,7 @@
 # generator-ehi-compgen [![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/EventHi/generator-ehi-compgen.svg)](https://greenkeeper.io/)
+
 This package is used internally at the EventHi team to generate boilerplate for new React components. This is available in both function and class forms.
 
 
