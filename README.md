@@ -42,7 +42,7 @@ yo ehi-compgen # functional component
 
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from './<%= componentName %>.css';
+import theme from 'ComponentName.css';
 
 type PropsType = {}
 
@@ -117,7 +117,7 @@ yo ehi-compgen:class-gql # es6 class component w/ graphql
 import React, { Component } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { graphql, compose } from 'react-apollo';
-import theme from './neuwnweinde.css';
+import theme from './ComponentName.css';
 
 type PropsType = {};
 
