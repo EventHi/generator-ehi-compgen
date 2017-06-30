@@ -13,7 +13,7 @@
   ],
   "main": "generators/index.js",
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.0.1",
     "gulp-babel": "^6.1.2",
     "yeoman-generator": "^1.0.0",
     "yosay": "^2.0.0"
