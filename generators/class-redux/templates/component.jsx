@@ -16,8 +16,8 @@ type Props = {};
 type State = {};
 
 class <%= componentName %> extends Component<Props, State> {
-  state: State;
   props: Props;
+  state: State;
 
   render() {
     return (
