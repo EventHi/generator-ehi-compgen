@@ -1,59 +1,77 @@
 {
   "name": "generator-ehi-compgen",
-  "version": "0.7.0",
-  "description": "Used internally by the EventHi team to generate new components boilerplate.",
-  "homepage": "",
+  "version": "1.1.2",
+  "description":
+    "Used internally by the EventHi team to generate new components boilerplate.",
+  "homepage": "https://www.eventhi.io",
   "author": {
     "name": "Kenneth Gabbara",
     "email": "kenneth@eventhi.io",
-    "url": ""
+    "url": "https://www.eventhi.io"
   },
-  "files": [
-    "generators"
+  "files": ["app", "subgenerator"],
+  "keywords": [
+    "yeoman-generator",
+    "yeoman",
+    "generator",
+    "inception",
+    "init",
+    "create",
+    "boilerplate"
   ],
-  "main": "generators/index.js",
-  "dependencies": {
-    "chalk": "^1.1.3",
-    "gulp-babel": "^6.1.2",
-    "yeoman-generator": "^1.0.0",
-    "yosay": "^2.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "~6.24.0",
-    "babel-core": "~6.24.0",
-    "babel-eslint": "~7.2.1",
-    "babel-plugin-syntax-flow": "^6.18.0",
-    "babel-plugin-transform-async-to-generator": "~6.22.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "~6.24.0",
-    "babel-plugin-transform-flow-strip-types": "~6.22.0",
-    "babel-plugin-transform-runtime": "~6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-3": "~6.22.0",
-    "eslint": "^3.1.1",
-    "eslint-config-prettier": "^1.3.0",
-    "eslint-config-xo-space": "^0.16.0",
-    "eslint-plugin-prettier": "^2.0.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^1.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-mocha": "^4.3.0",
-    "gulp-nsp": "^2.1.0",
-    "gulp-plumber": "^1.0.0",
-    "prettier": "^1.1.0",
-    "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.6.0"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
   "repository": "EventHi/generator-ehi-compgen",
   "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
-  }
+    "test": "jest",
+    "pretest": "eslint . --fix",
+    "prepublish": "nsp check"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "deep-extend": "^0.5.0",
+    "generator-node": "^2.3.0",
+    "inquirer-npm-name": "^2.0.0",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "superb": "^1.3.0",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "nsp": "^2.8.1",
+    "prettier": "^1.10.2",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "eslintConfig": {
+    "extends": ["xo-space/esnext", "prettier"],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": ["prettier"]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["templates"]
+  },
+  "license": "MIT"
 }

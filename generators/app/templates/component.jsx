@@ -6,15 +6,16 @@
 // @flow
 
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from './<%= componentName %>.css';
+import { withStyles } from 'material-ui/styles';
 
-type PropsType = {};
+const styles = theme => ({});
 
-const <%= componentName %> = (props: PropsType) => (
+type Props = {};
+
+const <%= componentName %> = (props: Props) => (
   <div>
-    <span>{'<%= componentName %>'}</span>
+    <span><%= componentName %></span>
   </div>
 );
 
-export default withStyles(theme)(<%= componentName %>);
+export default withStyles(styles)(<%= componentName %>);

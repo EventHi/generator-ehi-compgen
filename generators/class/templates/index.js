@@ -4,4 +4,4 @@
 //             |___|\_/\___|_||_\__|_||_|_|
 //
 
-export default from './<%= componentName %>.jsx';
+export default from './<%= componentName %>';
