@@ -1,17 +1,24 @@
 # generator-ehi-compgen
-[![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen)  [![Greenkeeper badge](https://badges.greenkeeper.io/EventHi/generator-ehi-compgen.svg)](https://greenkeeper.io/)
 
-This package uses Flowtype, GraphQL, and isomorphic-style-loader.
+[![npm version](https://badge.fury.io/js/generator-ehi-compgen.svg)](https://badge.fury.io/js/generator-ehi-compgen) [![Greenkeeper badge](https://badges.greenkeeper.io/EventHi/generator-ehi-compgen.svg)](https://greenkeeper.io/)
 
-This is used internally at the EventHi team to generate boilerplate for new React components. This is available in both function and class forms.
+This package uses Flowtype, Apollo-Client, and Material-UI.
 
+This is used internally at the EventHi team to generate boilerplate for new React components.
+
+There are a few different options available:
+
+* [Stateless Functional Component](#stateless-functional-component-example)
+* [ES6 Class Component](#es6-class-component-example)
+* [ES6 Class Component Example with Apollo-Client](#es6-class-component-example-with-apollo-client)
+* [ES6 Class Component Example with Redux Connect](#es6-class-component-example-with-redux-connect)
+* [ES6 Class Component Example with Redux Connected and GraphQL](#es6-class-component-example-with-redux-connected-and-graphql)
 
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-ehi-compgen using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-
 npm install -g yo
 npm install -g generator-ehi-compgen
 ```
@@ -19,20 +26,24 @@ npm install -g generator-ehi-compgen
 Then generate your new component:
 
 ```bash
-
-yo ehi-compgen  # stateless component
-yo ehi-compgen:class  # es6 class component
-yo ehi-compgen:class-gql # es6 class component w/ graphql
+yo ehi-compgen  # Stateless Functional Component
+yo ehi-compgen:class  # ES6 Class Component
+yo ehi-compgen:class-apollo # ES6 Class Component Example with Apollo-Client
+yo ehi-compgen:class-redux # ES6 Class Component Example with Redux Connect
+yo ehi-compgen:class-all # ES6 Class Component Example with Redux Connected and GraphQL
 ```
-## Stateless Component Example
+
+## Stateless Functional Component Example
+
 ### Input
+
 ```bash
-
-yo ehi-compgen # functional component
+yo ehi-compgen  # Stateless Functional Component
 ```
-### Output
-```js
 
+### Output
+
+```js
 //              ___             _   _  _ _
 //             | __|_ _____ _ _| |_| || (_)
 // Property of:| _|\ V / -_) ' \  _| __ | |
@@ -41,29 +52,32 @@ yo ehi-compgen # functional component
 // @flow
 
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from 'ComponentName.css';
+import { withStyles } from 'material-ui/styles';
 
-type PropsType = {}
+const styles = theme => ({});
 
-const ComponentName = (props: PropsType) => (
+type Props = {};
+
+const ComponentName = (props: Props) => (
   <div>
-    <span>{'ComponentName'}</span>
+    <span>ComponentName</span>
   </div>
 );
 
-export default withStyles(theme)(ComponentName);
-
+export default withStyles(styles)(ComponentName);
 ```
+
 ## ES6 Class Component Example
+
 ### Input
+
 ```bash
-
-yo ehi-compgen:class # es6 class component
+yo ehi-compgen:class # ES6 Class Component
 ```
-### Output
-```js
 
+### Output
+
+```js
 //              ___             _   _  _ _
 //             | __|_ _____ _ _| |_| || (_)
 // Property of:| _|\ V / -_) ' \  _| __ | |
@@ -72,41 +86,41 @@ yo ehi-compgen:class # es6 class component
 // @flow
 
 import React, { Component } from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import theme from './ComponentName.css';
+import { withStyles } from 'material-ui/styles';
 
-type PropsType = {};
+const styles = theme => ({});
 
-type DefaultPropsType = {};
+type Props = {};
 
-type StateType = {};
+type State = {};
 
-class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
-  static defaultProps: DefaultPropsType;
-  props: PropsType;
-  state: StateType;
+class ComponentName extends Component<Props, State> {
+  state: State;
+  props: Props;
 
   render() {
     return (
       <div>
-        <span>{'ComponentName'}</span>;
+        <span>ComponentName</span>
       </div>
     );
   }
 }
 
-export default withStyles(theme)(ComponentName);
-
+export default withStyles(styles)(ComponentName);
 ```
-## ES6 Class Component Example w/ Apollo-Client
+
+## ES6 Class Component Example with Apollo-Client
+
 ### Input
+
 ```bash
-
-yo ehi-compgen:class-gql # es6 class component w/ graphql
+yo ehi-compgen:class-apollo # ES6 Class Component Example with Apollo-Client
 ```
-### Output
-```js
 
+### Output
+
+```js
 //              ___             _   _  _ _
 //             | __|_ _____ _ _| |_| || (_)
 // Property of:| _|\ V / -_) ' \  _| __ | |
@@ -115,46 +129,152 @@ yo ehi-compgen:class-gql # es6 class component w/ graphql
 // @flow
 
 import React, { Component } from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { graphql, compose } from 'react-apollo';
-import theme from './ComponentName.css';
+import { withStyles } from 'material-ui/styles';
 
-type PropsType = {};
+import ComponentNameQuery from './ComponentNameQuery.graphql';
 
-type DefaultPropsType = {};
+const styles = theme => ({});
 
-type StateType = {};
+type Props = {};
 
-class ComponentName extends Component<DefaultPropsType, PropsType, StateType> {
-  static defaultProps: DefaultPropsType;
-  props: PropsType;
-  state: StateType;
+type State = {};
+
+class ComponentName extends Component<Props, State> {
+  state: State;
+  props: Props;
 
   render() {
     return (
       <div>
-        <span>{'ComponentName'}</span>;
+        <span>ComponentName</span>
       </div>
     );
   }
 }
 
-const ComponentNameQuery = gql`
-  query {}
-`;
+export default compose(withStyles(styles), graphql(ComponentNameQuery))(ComponentName);
+```
 
-export default compose(withStyles(theme), graphql(ComponentNameQuery))(ComponentName);
+## ES6 Class Component Example with Redux Connect
 
+### Input
+
+```bash
+yo ehi-compgen:class-redux # ES6 Class Component Example with Redux Connect
+```
+
+### Output
+
+```js
+//              ___             _   _  _ _
+//             | __|_ _____ _ _| |_| || (_)
+// Property of:| _|\ V / -_) ' \  _| __ | |
+//             |___|\_/\___|_||_\__|_||_|_|
+//
+// @flow
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withStyles } from 'material-ui/styles';
+
+const styles = theme => ({});
+
+type Props = {};
+
+type State = {};
+
+class ComponentName extends Component<Props, State> {
+  props: Props;
+  state: State;
+
+  render() {
+    return (
+      <div>
+        <span>ComponentName</span>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+  const selector = formValueSelector(ownProps.form);
+  return {};
+};
+
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default compose(withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(
+  ComponentName,
+);
+```
+
+## ES6 Class Component Example with Redux Connected and GraphQL
+
+### Input
+
+```bash
+yo ehi-compgen:class-all # ES6 Class Component Example with Redux Connected and GraphQL
+```
+
+### Output
+
+```js
+//              ___             _   _  _ _
+//             | __|_ _____ _ _| |_| || (_)
+// Property of:| _|\ V / -_) ' \  _| __ | |
+//             |___|\_/\___|_||_\__|_||_|_|
+//
+// @flow
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { graphql, compose } from 'react-apollo';
+import { withStyles } from 'material-ui/styles';
+
+import ComponentNameQuery from './ComponentNameQuery.graphql';
+
+const styles = theme => ({});
+
+type Props = {};
+
+type State = {};
+
+class ComponentName extends Component<Props, State> {
+  state: State;
+  props: Props;
+
+  render() {
+    return (
+      <div>
+        <span>ComponentName</span>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+  const selector = formValueSelector(ownProps.form);
+  return {};
+};
+
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default compose(
+  withStyles(styles),
+  connect(mapStateToProps, mapDispatchToProps),
+  graphql(ComponentNameQuery),
+)(ComponentName);
 ```
 
 ## Getting To Know Yeoman
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+* Yeoman has a heart of gold.
+* Yeoman is a person with feelings and opinions, but is very easy to work with.
+* Yeoman can be too opinionated at times but is easily convinced not to be.
+* Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
+
 MIT license
 Copyright ©EventHi Inc
 
@@ -171,7 +291,6 @@ limited to the warranties of merchantability, fitness for a particular purpose a
 no event shall the authors or copyright holders be liable for any claim, damages or other liability,
 whether in an action of contract, tort or otherwise, arising from, out of or in connection with the
 Software or the use or other dealings in the Software.
-
 
 [npm-image]: https://badge.fury.io/js/generator-ehi.svg
 [npm-url]: https://npmjs.org/package/generator-ehi-compgen
