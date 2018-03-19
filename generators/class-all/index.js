@@ -1,10 +1,10 @@
 'use strict';
-var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
 
-module.exports = Generator.extend({
-  prompting: function() {
+module.exports = class extends Generator {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(
       yosay('Welcome to the transcendent ' + chalk.red('generator-ehi') + ' generator!'),
@@ -19,15 +19,13 @@ module.exports = Generator.extend({
       },
     ];
 
-    return this.prompt(prompts).then(
-      function(props) {
-        // To access props later use this.props.compName;
-        this.props = props;
-      }.bind(this),
-    );
-  },
+    return this.prompt(prompts).then(props => {
+      // To access props later use this.props.someAnswer;
+      this.props = props;
+    });
+  }
 
-  writing: function() {
+  writing() {
     this.fs.copyTpl(
       this.templatePath('index.js'),
       this.destinationPath(`${this.props.compName}/index.js`),
@@ -43,5 +41,5 @@ module.exports = Generator.extend({
       this.destinationPath(`${this.props.compName}/${this.props.compName}Query.graphql`),
       { componentName: this.props.compName },
     );
-  },
-});
+  }
+};

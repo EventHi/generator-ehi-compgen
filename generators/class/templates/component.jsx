@@ -6,7 +6,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({});
@@ -28,13 +27,4 @@ class <%= componentName %> extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const selector = formValueSelector(ownProps.form);
-  return {};
-};
-
-const mapDispatchToProps = dispatch => ({ dispatch });
-
-export default compose(withStyles(styles), connect(mapStateToProps, mapDispatchToProps))(
-  <%= componentName %>,
-);
+export default withStyles(styles)(<%= componentName %>);
