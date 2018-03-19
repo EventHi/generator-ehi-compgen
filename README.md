@@ -8,11 +8,11 @@ This is used internally at the EventHi team to generate boilerplate for new Reac
 
 There are a few different options available:
 
-* [Stateless Functional Component](#stateless-functional-component-example)
-* [ES6 Class Component](#es6-class-component-example)
-* [ES6 Class Component Example with Apollo-Client](#es6-class-component-example-with-apollo-client)
-* [ES6 Class Component Example with Redux Connect](#es6-class-component-example-with-redux-connect)
-* [ES6 Class Component Example with Redux Connected and GraphQL](#es6-class-component-example-with-redux-connected-and-graphql)
+* [Stateless Functional Component](#stateless-functional-component)
+* [ES6 Class Component](#es6-class-component)
+* [ES6 Class Component with Apollo-Client](#es6-class-component-with-apollo-client)
+* [ES6 Class Component with Redux Connect](#es6-class-component-with-redux-connect)
+* [ES6 Class Component with Redux Connected and GraphQL](#es6-class-component-with-redux-connected-and-graphql)
 
 ## Installation
 
@@ -28,12 +28,12 @@ Then generate your new component:
 ```bash
 yo ehi-compgen  # Stateless Functional Component
 yo ehi-compgen:class  # ES6 Class Component
-yo ehi-compgen:class-apollo # ES6 Class Component Example with Apollo-Client
-yo ehi-compgen:class-redux # ES6 Class Component Example with Redux Connect
-yo ehi-compgen:class-all # ES6 Class Component Example with Redux Connected and GraphQL
+yo ehi-compgen:class-apollo # ES6 Class Component with Apollo-Client
+yo ehi-compgen:class-redux # ES6 Class Component with Redux Connect
+yo ehi-compgen:class-all # ES6 Class Component with Redux Connected and GraphQL
 ```
 
-## Stateless Functional Component Example
+## Stateless Functional Component
 
 ### Input
 
@@ -67,7 +67,7 @@ const ComponentName = (props: Props) => (
 export default withStyles(styles)(ComponentName);
 ```
 
-## ES6 Class Component Example
+## ES6 Class Component
 
 ### Input
 
@@ -110,12 +110,12 @@ class ComponentName extends Component<Props, State> {
 export default withStyles(styles)(ComponentName);
 ```
 
-## ES6 Class Component Example with Apollo-Client
+## ES6 Class Component with Apollo-Client
 
 ### Input
 
 ```bash
-yo ehi-compgen:class-apollo # ES6 Class Component Example with Apollo-Client
+yo ehi-compgen:class-apollo # ES6 Class Component with Apollo-Client
 ```
 
 ### Output
@@ -156,12 +156,12 @@ class ComponentName extends Component<Props, State> {
 export default compose(withStyles(styles), graphql(ComponentNameQuery))(ComponentName);
 ```
 
-## ES6 Class Component Example with Redux Connect
+## ES6 Class Component with Redux Connect
 
 ### Input
 
 ```bash
-yo ehi-compgen:class-redux # ES6 Class Component Example with Redux Connect
+yo ehi-compgen:class-redux # ES6 Class Component with Redux Connect
 ```
 
 ### Output
@@ -209,12 +209,12 @@ export default compose(withStyles(styles), connect(mapStateToProps, mapDispatchT
 );
 ```
 
-## ES6 Class Component Example with Redux Connected and GraphQL
+## ES6 Class Component with Redux Connected and GraphQL
 
 ### Input
 
 ```bash
-yo ehi-compgen:class-all # ES6 Class Component Example with Redux Connected and GraphQL
+yo ehi-compgen:class-all # ES6 Class Component with Redux Connected and GraphQL
 ```
 
 ### Output
