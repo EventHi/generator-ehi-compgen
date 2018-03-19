@@ -6,6 +6,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import { compose } from 'react-apollo';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 

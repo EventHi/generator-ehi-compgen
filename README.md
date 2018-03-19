@@ -174,6 +174,7 @@ yo ehi-compgen:class-redux # ES6 Class Component Example with Redux Connect
 //
 // @flow
 import React, { Component } from 'react';
+import { compose } from 'react-apollo';
 import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 
@@ -184,8 +185,8 @@ type Props = {};
 type State = {};
 
 class ComponentName extends Component<Props, State> {
-  props: Props;
   state: State;
+  props: Props;
 
   render() {
     return (
