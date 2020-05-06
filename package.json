@@ -1,17 +1,21 @@
 {
   "name": "generator-ehi-compgen",
   "version": "1.4.1",
-  "description":
-    "Used internally by the EventHi team to generate new components boilerplate.",
+  "description": "Used internally by the EventHi team to generate new components boilerplate.",
   "homepage": "https://www.eventhi.io",
   "author": {
     "name": "Kenneth Gabbara",
     "email": "kenneth@eventhi.io",
     "url": "https://www.eventhi.io"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
-  "keywords": ["", "yeoman-generator"],
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
@@ -29,23 +33,34 @@
   "dependencies": {
     "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
-    "yosay": "^2.0.1"
+    "yosay": "^2.0.1",
+    "snyk": "^1.319.0"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "scripts": {
-    "prepublish": "nsp check",
+    "prepublish": "npm run snyk-protect && nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -59,8 +74,11 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
   "repository": "EventHi/generator-ehi-compgen",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
